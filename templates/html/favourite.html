@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genres</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: left;
+            background-color: #252525;
+            color: #900505;
+        }
+        h1 {
+            margin-top: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        h1:hover {
+    color: #900505;
+    text-shadow: 0px 0px 10px rgba(218, 127, 127, 0.8); /* Subtle glow */
+    background: none; /* Ensures no highlight box */
+}
+        .image-gallery {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 10px;
+            white-space: nowrap;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .image-gallery::-webkit-scrollbar {
+            display: none;
+        }
+
+        .image-gallery img {
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2);
+        }
+
+        .gallery-container {
+            position: relative;
+            overflow: hidden;
+            padding: 20px;
+            max-width: 90vw;
+            margin: auto;
+        }
+        .image-gallery {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 10px;
+            white-space: nowrap;
+        }
+        .image-gallery img {
+    width: 200px; /* Set a fixed width */
+    height: 350px; /* Set a fixed height */
+    object-fit: cover; /* Ensures images maintain aspect ratio without distortion */
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+}
+
+        .movie-item {
+            position: relative;
+            display: inline-block;
+        }
+        .menu-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 5px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 18px;
+        }
+        .menu {
+            display: none;
+            position: absolute;
+            top: 35px;
+            right: 10px;
+            background: white;
+            color: black;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+        .menu button {
+            display: block;
+            width: 100%;
+            border: none;
+            background: none;
+            padding: 8px 12px;
+            text-align: left;
+            cursor: pointer;
+        }
+        .menu button:hover {
+            background: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function scrollGallery(id, scrollAmount) {
+            document.getElementById(id).scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
+    </script>
+
+
+
+    <script>
+        function toggleMenu(event) {
+            event.stopPropagation();
+            const menu = event.target.nextElementSibling;
+            document.querySelectorAll('.menu').forEach(m => {
+                if (m !== menu) m.style.display = 'none';
+            });
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        }
+        document.addEventListener('click', () => {
+            document.querySelectorAll('.menu').forEach(m => m.style.display = 'none');
+        });
+        function addToWatchlist(movie) {
+            alert(`${movie} added to Watchlist`);
+        }
+        function addToFavorites(movie) {
+            alert(`${movie} added to Favorites`);
+        }
+        function watchTrailer(movie) {
+            alert(`Opening trailer for ${movie}`);
+        }
+    </script>
+    <h1>Action & Thriller</h1>
+    <div class="gallery-container">
+        <div class="image-gallery">
+            <div class="movie-item">
+                <img src="maverick.avif" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="john wick.jpg" alt="John Wick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('John Wick')">Watchlist</button>
+                    <button onclick="addToFavorites('John Wick')">Favorite</button>
+                    <button onclick="watchTrailer('John Wick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="mad max.jpg" alt="John Wick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('John Wick')">Watchlist</button>
+                    <button onclick="addToFavorites('John Wick')">Favorite</button>
+                    <button onclick="watchTrailer('John Wick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="war.jpg" alt="John Wick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('John Wick')">Watchlist</button>
+                    <button onclick="addToFavorites('John Wick')">Favorite</button>
+                    <button onclick="watchTrailer('John Wick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="jurassic park.png" alt="John Wick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('John Wick')">Watchlist</button>
+                    <button onclick="addToFavorites('John Wick')">Favorite</button>
+                    <button onclick="watchTrailer('John Wick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="yodha.jpg" alt="John Wick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('John Wick')">Watchlist</button>
+                    <button onclick="addToFavorites('John Wick')">Favorite</button>
+                    <button onclick="watchTrailer('John Wick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="kalki.jpg" alt="John Wick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('John Wick')">Watchlist</button>
+                    <button onclick="addToFavorites('John Wick')">Favorite</button>
+                    <button onclick="watchTrailer('John Wick')">Trailer</button>
+                </div>
+            </div>
+        </div>
+        <!-- <button class="scroll-btn scroll-right" onclick="scrollGallery('action-gallery', 300)">&#10095;</button> -->
+    </div>
+    <h1>SCI-FI </h1>
+    <div class="gallery-container">
+        <button class="scroll-btn scroll-left" onclick="scrollGallery('action-gallery', -300)">&#10094;</button>
+        <div class="image-gallery" id="action-gallery">
+            <div class="movie-item">
+                <img src="The_Matrix_Resurrections.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="Mission_Mangal.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="arrival.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="Interstellar.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="Martian.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="spaceman.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="dune.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <!-- <button class="scroll-btn scroll-right" onclick="scrollGallery('action-gallery', 300)">&#10095;</button> -->
+        </div>
+    <h1>COMEDY</h1>
+    <div class="gallery-container">
+        <button class="scroll-btn scroll-left" onclick="scrollGallery('action-gallery', -300)">&#10094;</button>
+        <div class="image-gallery" id="action-gallery">
+            <div class="movie-item">
+                <img src="Dhamaal.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="Hera_Pheri.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="3_idiots.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="Spy.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="Incoming.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="Confessions of a Shopaholic.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="PK.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+    </div>
+    <!-- <button class="scroll-btn scroll-right" onclick="scrollGallery('action-gallery', 300)">&#10095;</button> -->
+    </div>
+
+    <h1>HORROR</h1>
+    <div class="gallery-container">
+        <button class="scroll-btn scroll-left" onclick="scrollGallery('action-gallery', -300)">&#10094;</button>
+        <div class="image-gallery" id="action-gallery">
+            <div class="movie-item">
+                <img src="pari.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="munjya.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="Bulbbul.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="crow.jpeg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="Conjuring.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="Insidious.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="Annabelle.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+    </div>
+    <!-- <button class="scroll-btn scroll-right" onclick="scrollGallery('action-gallery', 300)">&#10095;</button> -->
+    </div>
+
+    <h1>HORROR COMEDY</h1>
+    <div class="gallery-container">
+        <button class="scroll-btn scroll-left" onclick="scrollGallery('action-gallery', -300)">&#10094;</button>
+        <div class="image-gallery" id="action-gallery">
+            <div class="movie-item">
+                <img src="Bhoot_Police.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="Bhool_Bhulaiyaa_3.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="Stree.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="golmaal again.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="The_Menu.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="FrightNight.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="The Dead Don't Die.jpeg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+    </div>
+    <!-- <button class="scroll-btn scroll-right" onclick="scrollGallery('action-gallery', 300)">&#10095;</button> -->
+    </div>
+
+    <h1>DRAMA</h1>
+    <div class="gallery-container">
+        <button class="scroll-btn scroll-left" onclick="scrollGallery('action-gallery', -300)">&#10094;</button>
+        <div class="image-gallery" id="action-gallery">
+            <div class="movie-item">
+                <img src="Challengers.jpeg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="Joker.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="The_Wolf_of_Wall_Street.png" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="Mrs..jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="October.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="Article.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="Do_Patti.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+    </div>
+    <!-- <button class="scroll-btn scroll-right" onclick="scrollGallery('action-gallery', 300)">&#10095;</button> -->
+    </div>
+
+    <h1>BIOPIC & DOCUMENTARIES</h1>
+    <div class="gallery-container">
+        <button class="scroll-btn scroll-left" onclick="scrollGallery('action-gallery', -300)">&#10094;</button>
+        <div class="image-gallery" id="action-gallery">
+            <div class="movie-item">
+                <img src="Schindler's_List_movie.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="Neerja.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="openheimer.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="12th_Fail.jpeg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="ms dhoni.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="Shershaah.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="Bhaag_Milkha_Bhaag_poster.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+    </div>
+    <!-- <button class="scroll-btn scroll-right" onclick="scrollGallery('action-gallery', 300)">&#10095;</button> -->
+    </div>
+
+    <h1>PERIOD & HISTORICAL</h1>
+    <div class="gallery-container">
+        <button class="scroll-btn scroll-left" onclick="scrollGallery('action-gallery', -300)">&#10094;</button>
+        <div class="image-gallery" id="action-gallery">
+            <div class="movie-item">
+                <img src="chhaava.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="panipat.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="Padmaavat.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="Napoleon.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="Mohicansposter.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="The_Revenant.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="kalank.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="The_Matrix_Resurrections.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+    </div>
+    <!-- <button class="scroll-btn scroll-right" onclick="scrollGallery('action-gallery', 300)">&#10095;</button> -->
+    </div>
+
+    <h1>DRAMA & ROMANCE</h1>
+    <div class="gallery-container">
+        <button class="scroll-btn scroll-left" onclick="scrollGallery('action-gallery', -300)">&#10094;</button>
+        <div class="image-gallery" id="action-gallery">
+            <div class="movie-item">
+                <img src="love aaj kal.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="Yeh_jawani_hai_deewani.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="Rab_Ne_Bana_Di_Jodi.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="Shiddat.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="Zero.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="La_La_Land.png" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="CallMeByYourName.png" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+    </div>
+    <button class="scroll-btn scroll-right" onclick="scrollGallery('action-gallery', 300)">&#10095;</button>
+    </div>
+
+    <h1>ROM-COM</h1>
+    <div class="gallery-container">
+        <button class="scroll-btn scroll-left" onclick="scrollGallery('action-gallery', -300)">&#10094;</button>
+        <div class="image-gallery" id="action-gallery">
+            <div class="movie-item">
+                <img src="cocktail poster.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="Band_Baaja_Baaraat.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="dostana.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="Mere_Brother_Ki_Dulhan22.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="Jab_We_Met.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="Family_affair.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="The_Perfect_Date.jpg" alt="Maverick">
+                <button class="menu-btn" onclick="toggleMenu(event)">&#x22EE;</button>
+                <div class="menu">
+                    <button onclick="addToWatchlist('Maverick')">Watchlist</button>
+                    <button onclick="addToFavorites('Maverick')">Favorite</button>
+                    <button onclick="watchTrailer('Maverick')">Trailer</button>
+                </div>
+            </div>
+    </div>
+        </div>
+    </div> 
+</body>
+</html>

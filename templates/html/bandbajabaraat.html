@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: auto;
+        }
+        .movie-header {
+            display: flex;
+            gap: 20px;
+        }
+        .movie-header img {
+            width: 180px;
+            height: 270px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .movie-details {
+            flex-grow: 1;
+        }
+        .watchlist-btn {
+            background-color:  #ffc107;
+            border: none;                      
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .info-section {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .info-box {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            width: 48%;
+            text-align: center;
+        }
+        .info-box img {
+            width: 150px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        h1:hover {
+    color: #eb0c0c;
+    text-shadow: 0px 0px 10px rgba(232, 65, 65, 0.8); /* Subtle glow */
+    background: none; /* Ensures no highlight box */
+}
+
+        .gallery-container {
+            position: relative;
+            overflow: hidden;
+            padding: 20px;
+            max-width: 90vw;
+            margin: auto;
+        }
+
+        .image-gallery {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 10px;
+            white-space: nowrap;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .image-gallery::-webkit-scrollbar {
+            display: none;
+        }
+
+        .image-gallery img {
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2);
+        }
+
+        .scroll-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 18px;
+            transition: background 0.3s;
+        }
+
+        .scroll-btn:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .scroll-left {
+            left: 0;
+        }
+
+        .scroll-right {
+            right: 0;
+        }
+        .reviews {
+            margin-top: 30px;
+        }
+        .reviews h2 {
+            margin-bottom: 15px;
+        }
+        .review-box {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .review {
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .trailer-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .trailer-container iframe {
+            width: 100%;
+            max-width: 800px;
+            height: 450px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="movie-header">
+            <img src="Band_Baaja_Baaraat.jpg" alt="Captain America: Brave New World Poster">
+            <div class="movie-details">
+                <h2>Band Baaja Baaraat</h2>
+                <p><strong>Year:</strong> 2010 | <strong>Rating:</strong> 6.4★| <strong>Duration:</strong> 2h 25min</p>
+                <p>Two youngsters from Delhi, Shruti and Bittu, start a wedding planning enterprise called Shadi Mubarak. However, everything changes in their lives when Shruti falls in love with Bittu.</p>
+                <p><strong>Genres:</strong> Romantic comedy, comedy, drama, romance </p>
+                <p><strong>Director:</strong> Maneesdh Sharma</p>
+                <p><strong>Writers:</strong> 
+                Amitabh BhattacharyaHabib FaisalManeesh Sharma</p>
+                <button class="watchlist-btn">+ Add to Watchlist</button>
+            </div>
+        </div>
+        <div class="trailer-container">
+            <h1>Movie Trailer</h1>
+            <!-- <iframe 
+    src="https://www.youtube.com/watch?v=k67ErU7SeIE" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen>
+</iframe> -->
+
+            <iframe src="https://www.youtube.com/embed/k67ErU7SeIE" frameborder="0" allowfullscreen></iframe>
+           
+        </div>
+        <h1>STARCAST</h1>
+        <div class="info-section">
+            <div class="info-box">
+                <img src="ranveer.avif" alt="Capt. Vikram Batra">
+                <h3>Bittoo Sharma</h3>
+                <p>Ranveer Singh</p>
+            </div>
+            <div class="info-box">
+                <img src="anushka.jpg" alt="Dimple Cheema">
+                <h3>Shruti Kakkar</h3>
+                <p>Anushka Sharma</p>
+            </div>
+        
+        
+            <div class="info-box">
+                <img src="shena.jpg" alt="Capt. Vikram Batra">
+                <h3>Chanda Narang</h3>
+                <p>Shena Gamat</p>
+            </div>   
+    
+        <div class="info-box">
+            <img src="manish.avif" alt="Capt. Vikram Batra">
+            <h3>Sidhwani</h3>
+            <p>Manish Chaudhari</p>
+        </div>   
+</div>
+    <h1>USER-REVIEWS</h1>
+        <div class="reviews">
+            <div class="review-box">
+                <div class="review">
+                    <p><strong>Feel good factor is the USP of the movie</strong><br>
+                        Happiness and smile was, what spread in the theater during most of the parts of the movie and this is why you go to some multiplex. The BBB earns full marks on this front. It is not a nonsense comedy which is pestering Bollywood from last 2-3 years. Neither is this, some intense, provoking, thoughtful movie.
+</p>
+                </div>
+                <div class="review">
+                    <p><strong>Highly Entertaining</strong><br>
+                        There are times when you like predictability in a film and you actually look forward to it. You know exactly how the story will unfold and that there will be no dramatic twists and turns and distressing suspense. You still manage to enjoy whatever is going on. </p>
+                </div>
+                <div class="review">
+                    <p><strong>A Decent Flick...</strong><br>
+                        Debutant Director Maneesh Sharma makes a good entry in filmdom with 'Baand Baaja Baaraat'. This Romantic-Comedy has an interesting first hour, likable performances, soulful music & good direction working on it's advantage.</p>
+                </div>
+            </div>
+        </div>
+        <button class="scroll-btn scroll-right" onclick="scrollGallery('action-gallery', 300)">&#10095;</button>
+    </div>
+</body>
+</html>
+

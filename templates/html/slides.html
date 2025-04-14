@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegant Movie Categories Carousel</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #444;
+            margin-top: 30px;
+        }
+
+        .carousel-container {
+            position: relative;
+            max-width: 90%;
+            margin: 40px auto;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            background: #ffffff;
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+        }
+
+        .carousel-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .carousel-btn {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 50%;
+            outline: none;
+        }
+
+        .carousel-btn:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .dots-container {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .dot {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            margin: 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Action & Thriller</h1>
+    <div class="carousel-container">
+        <div class="carousel" id="carousel-action">
+            <img src="maverick.avif" alt="Picture 1">
+            <img src="john wick.jpg" alt="Picture 2">
+            <img src="mad max.jpg" alt="Picture 3">
+            <img src="war.jpg" alt="Picture 4">
+            <img src="jurassic park.png" alt="Picture 5">
+        </div>
+        <div class="carousel-controls">
+            <button class="carousel-btn prev" onclick="moveCarousel('carousel-action', -1)">&#10094;</button>
+            <button class="carousel-btn next" onclick="moveCarousel('carousel-action', 1)">&#10095;</button>
+        </div>
+    </div>
+
+    <h1>Sci-Fi</h1>
+    <div class="carousel-container">
+        <div class="carousel" id="carousel-sci-fi">
+            <img src="The_Matrix_Resurrections.jpg" alt="Picture 1">
+            <img src="Mission_Mangal.jpg" alt="Picture 2">
+            <img src="arrival.jpg" alt="Picture 3">
+            <img src="Interstellar.jpg" alt="Picture 4">
+            <img src="Martian.jpg" alt="Picture 5">
+        </div>
+        <div class="carousel-controls">
+            <button class="carousel-btn prev" onclick="moveCarousel('carousel-sci-fi', -1)">&#10094;</button>
+            <button class="carousel-btn next" onclick="moveCarousel('carousel-sci-fi', 1)">&#10095;</button>
+        </div>
+    </div>
+
+    <script>
+        function moveCarousel(carouselId, direction) {
+            const carousel = document.getElementById(carouselId);
+            const slides = carousel.children;
+            const totalSlides = slides.length;
+            const currentOffset = parseFloat(getComputedStyle(carousel).transform.split(',')[4]) || 0;
+            const slideWidth = slides[0].clientWidth;
+            const maxOffset = -(totalSlides - 1) * slideWidth;
+            let newOffset = currentOffset + direction * slideWidth;
+
+            if (newOffset > 0) {
+                newOffset = maxOffset;
+            } else if (newOffset < maxOffset) {
+                newOffset = 0;
+            }
+
+            carousel.style.transform = `translateX(${newOffset}px)`;
+        }
+    </script>
+
+</body>
+</html>

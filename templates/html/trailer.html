@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: auto;
+        }
+        .movie-header {
+            display: flex;
+            gap: 20px;
+        }
+        .movie-header img {
+            width: 180px;
+            height: 270px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .movie-details {
+            flex-grow: 1;
+        }
+        .watchlist-btn {
+            background-color: #ffc107;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .trailer-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .trailer-container iframe {
+            width: 100%;
+            max-width: 800px;
+            height: 450px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="movie-header">
+            <img src="Shershaah.jpg" alt="Shershaah Poster">
+            <div class="movie-details">
+                <h2>Shershaah</h2>
+                <p><strong>Year:</strong> 2025 | <strong>Rating:</strong> 8.3★ | <strong>Duration:</strong> 2h 15min</p>
+                <p>Shershaah is the story of PVC awardee Indian soldier Capt. Vikram Batra, whose bravery and unflinching courage in chasing the Pakistani soldiers out of Indian territory contributed immensely in India finally winning the Kargil War in 1999.</p>
+                <p><strong>Genres:</strong> Action, Biography, War</p>
+                <p><strong>Director:</strong> Vishnuvardhan</p>
+                <p><strong>Writers:</strong> Sandeep Shrivastava</p>
+                <button class="watchlist-btn">+ Add to Watchlist</button>
+            </div>
+        </div>
+        
+        <div class="trailer-container">
+            <h1>Movie Trailer</h1>
+            <iframe src="https://www.youtube.com/embed/Q0FTXnefVBA" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+</body>
+</html>

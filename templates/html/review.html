@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Gallery</title>
+    <style>
+        body { background-color: #3d3c3c; color: #ecdbbb; text-align: center; }
+        img { width: 200px; height: auto; margin: 10px; cursor: pointer; border-radius: 8px; }
+        img:hover { transform: scale(1.1); transition: 0.3s; }
+    </style>
+</head>
+<body>
+    <h1>Movie Gallery</h1>
+    <div>
+        {% for movie in movies %}
+            <a href="{https://1drv.ms/f/c/6312a806cf82694d/EmT4XKcf95FJrwWtff_vCB0BJQSDNIqAr9NgRJeTSU9kSQ?e=kvfUFG}">
+                <img src="{{ url_for('static', filename='images/' + movie['image']) }}" alt="{{ movie['title'] }}" title="{{ movie['title'] }}">
+            </a>
+        {% endfor %}
+    </div>
+  
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genres</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            text-align: left;
+            background-color: #3d3c3c;
+            color: #ecdbbb;
+        }
+        h1 {
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    position: relative;
+    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+    background: transparent; /* Ensures no background */
+}
+
+h1:hover {
+    color: #f2c283;
+    text-shadow: 0px 0px 10px rgba(246, 175, 82, 0.8); /* Subtle glow */
+    background: none; /* Ensures no highlight box */
+}
+
+        .gallery-container {
+            position: relative;
+            overflow: hidden;
+            padding: 20px;
+            max-width: 90vw;
+            margin: auto;
+        }
+
+        .image-gallery {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 10px;
+            white-space: nowrap;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .image-gallery::-webkit-scrollbar {
+            display: none;
+        }
+
+        .image-gallery img {
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2);
+        }
+
+        .scroll-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 18px;
+            transition: background 0.3s;
+        }
+
+        .scroll-btn:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .scroll-left {
+            left: 0;
+        }
+
+        .scroll-right {
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Action & Thriller</h1>
+    <div class="gallery-container">
+        <button class="scroll-btn scroll-left" onclick="scrollGallery('action-gallery', -300)">&#10094;</button>
+        <div class="image-gallery" id="action-gallery">
+            <img src="maverick.avif" alt="Maverick">
+            <img src="john wick.jpg" alt="John Wick">
+            <img src="mad max.jpg" alt="Mad Max">
+            <img src="war.jpg" alt="War">
+            <img src="jurassic park.png" alt="Jurassic Park">
+            <img src="yodha.jpg" alt="Yodha">
+            <img src="kalki.jpg" alt="Kalki">
+        </div>
+        <button class="scroll-btn scroll-right" onclick="scrollGallery('action-gallery', 300)">&#10095;</button>
+    </div>
+
+    <h1>SCI-FI </h1>
+    <div class="gallery-container">
+        <button class="scroll-btn scroll-left" onclick="scrollGallery('action-gallery', -300)">&#10094;</button>
+        <div class="image-gallery" id="action-gallery">
+        <img src="The_Matrix_Resurrections.jpg" alt="Picture 1">
+        <img src="Mission_Mangal.jpg" alt="Picture 2">
+        <img src="arrival.jpg" alt="picture 3">
+        <img src="Interstellar.jpg" alt="picture 4">
+        <img src="Martian.jpg" alt="picture 5">
+        <img src="spaceman.jpg" alt="picture 6">
+        <img src="dune.jpg" alt="picture 7">
+    </div>
+    <button class="scroll-btn scroll-right" onclick="scrollGallery('action-gallery', 300)">&#10095;</button>
+    </div>
+    <h1>COMEDY</h1>
+    <div class="gallery-container">
+        <button class="scroll-btn scroll-left" onclick="scrollGallery('action-gallery', -300)">&#10094;</button>
+        <div class="image-gallery" id="action-gallery">
+        <img src="Dhamaal.jpg" alt="Picture 1">
+        <img src="Hera_Pheri.jpg" alt="Picture 2">
+        <img src="3_idiots.jpg" alt="picture 3">
+        <img src="Spy.jpg" alt="picture 4">
+        <img src="Incoming.jpg" alt="picture 5">
+        <img src="Confessions of a Shopaholic.jpg" alt="picture 6">
+        <img src="PK.jpg" alt="picture 7">
+    </div>
+    <button class="scroll-btn scroll-right" onclick="scrollGallery('action-gallery', 300)">&#10095;</button>
+    </div>
+
+    <h1>HORROR</h1>
+    <div class="gallery-container">
+        <button class="scroll-btn scroll-left" onclick="scrollGallery('action-gallery', -300)">&#10094;</button>
+        <div class="image-gallery" id="action-gallery">
+        <img src="pari.jpg" alt="Picture 1">
+        <img src="munjya.jpg" alt="Picture 2">
+        <img src="Bulbbul.jpg" alt="picture 3">
+        <img src="crow.jpeg" alt="picture 4">
+        <img src="Conjuring.jpg" alt="picture 5">
+        <img src="Insidious.jpg" alt="picture 6">
+        <img src="Annabelle.jpg" alt="picture 7">
+    </div>
+    <button class="scroll-btn scroll-right" onclick="scrollGallery('action-gallery', 300)">&#10095;</button>
+    </div>
+
+    <h1>HORROR COMEDY</h1>
+    <div class="gallery-container">
+        <button class="scroll-btn scroll-left" onclick="scrollGallery('action-gallery', -300)">&#10094;</button>
+        <div class="image-gallery" id="action-gallery">
+        <img src="Bhoot_Police.jpg" alt="Picture 1">
+        <img src="Bhool_Bhulaiyaa_3.jpg" alt="Picture 2">
+        <img src="Stree.jpg" alt="picture 3">
+        <img src="golmaal again.jpg" alt="picture 4">
+        <img src="The_Menu.jpg" alt="picture 5">
+        <img src="FrightNight.jpg" alt="picture 6">
+        <img src="The Dead Don't Die.jpeg" alt="picture 7">
+    </div>
+    <button class="scroll-btn scroll-right" onclick="scrollGallery('action-gallery', 300)">&#10095;</button>
+    </div>
+
+    <h1>DRAMA</h1>
+    <div class="gallery-container">
+        <button class="scroll-btn scroll-left" onclick="scrollGallery('action-gallery', -300)">&#10094;</button>
+        <div class="image-gallery" id="action-gallery">
+        <img src="Challengers.jpeg" alt="Picture 1">
+        <img src="Joker.jpg" alt="Picture 2">
+        <img src="The_Wolf_of_Wall_Street.png" alt="picture 3">
+        <img src="Mrs..jpg" alt="picture 4">
+        <img src="October.jpg" alt="picture 5">
+        <img src="Article.jpg" alt="picture 6">
+        <img src="Do_Patti.jpg" alt="picture 7">
+    </div>
+    <button class="scroll-btn scroll-right" onclick="scrollGallery('action-gallery', 300)">&#10095;</button>
+    </div>
+
+    <h1>BIOPIC & DOCUMENTARIES</h1>
+    <div class="gallery-container">
+        <button class="scroll-btn scroll-left" onclick="scrollGallery('action-gallery', -300)">&#10094;</button>
+        <div class="image-gallery" id="action-gallery">
+        <img src="Schindler's_List_movie.jpg" alt="Picture 1">
+        <img src="Neerja.jpg" alt="Picture 2">
+        <img src="openheimer.jpg" alt="picture 3">
+        <img src="12th_Fail.jpeg" alt="picture 4">
+        <img src="ms dhoni.jpg" alt="picture 5">
+        <img src="Shershaah.jpg" alt="picture 6">
+        <img src="Bhaag_Milkha_Bhaag_poster.jpg" alt="picture 7">
+    </div>
+    <button class="scroll-btn scroll-right" onclick="scrollGallery('action-gallery', 300)">&#10095;</button>
+    </div>
+
+    <h1>PERIOD & HISTORICAL</h1>
+    <div class="gallery-container">
+        <button class="scroll-btn scroll-left" onclick="scrollGallery('action-gallery', -300)">&#10094;</button>
+        <div class="image-gallery" id="action-gallery">
+        <img src="chhaava.jpg" alt="Picture 1">
+        <img src="panipat.jpg" alt="Picture 2">
+        <img src="Padmaavat.jpg" alt="picture 3">
+        <img src="Napoleon.jpg" alt="picture 4">
+        <img src="Mohicansposter.jpg" alt="picture 5">
+        <img src="The_Revenant.jpg" alt="picture 6">
+        <img src="kalank.jpg" alt="picture 7">
+    </div>
+    <button class="scroll-btn scroll-right" onclick="scrollGallery('action-gallery', 300)">&#10095;</button>
+    </div>
+
+    <h1>DRAMA & ROMANCE</h1>
+    <div class="gallery-container">
+        <button class="scroll-btn scroll-left" onclick="scrollGallery('action-gallery', -300)">&#10094;</button>
+        <div class="image-gallery" id="action-gallery">
+        <img src="love aaj kal.jpg" alt="Picture 1">
+        <img src="Yeh_jawani_hai_deewani.jpg" alt="Picture 2">
+        <img src="Rab_Ne_Bana_Di_Jodi.jpg" alt="picture 3">
+        <img src="Shiddat.jpg" alt="picture 4">
+        <img src="Zero.jpg" alt="picture 5">
+        <img src="La_La_Land.png" alt="picture 6">
+        <img src="CallMeByYourName.png" alt="picture 7">
+    </div>
+    <button class="scroll-btn scroll-right" onclick="scrollGallery('action-gallery', 300)">&#10095;</button>
+    </div>
+
+    <h1>ROM-COM</h1>
+    <div class="gallery-container">
+        <button class="scroll-btn scroll-left" onclick="scrollGallery('action-gallery', -300)">&#10094;</button>
+        <div class="image-gallery" id="action-gallery">
+        <img src="Cocktail.jpg" alt="Picture 1">
+        <img src="Band_Baaja_Baaraat.jpg" alt="Picture 2">
+        <img src="dostana.jpg" alt="picture 3">
+        <img src="Mere_Brother_Ki_Dulhan22.jpg" alt="picture 4">
+        <img src="Jab_We_Met.jpg" alt="picture 5">
+        <img src="Family_affair.jpg" alt="picture 6">
+        <img src="The_Perfect_Date.jpg" alt="picture 7">
+    </div>
+    <button class="scroll-btn scroll-right" onclick="scrollGallery('action-gallery', 300)">&#10095;</button>
+    </div>
+    <script>
+        function scrollGallery(id, scrollAmount) {
+            document.getElementById(id).scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
+    </script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shershaah Movie Review</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .gallery-container {
+            position: relative;
+            overflow: hidden;
+            padding: 20px;
+            max-width: 90vw;
+            margin: auto;
+        }
+
+        .image-gallery {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 10px;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .image-gallery::-webkit-scrollbar {
+            display: none;
+        }
+
+        .image-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            min-width: 200px;
+        }
+
+        .image-item img {
+            width: 200px; 
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+        }
+
+        .image-item img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2);
+        }
+
+        .image-caption {
+            margin-top: 5px;
+            font-size: 14px;
+            font-weight: bold;
+            color: white;
+            white-space: normal; /* Allows text to wrap properly */
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>SHERSHAAH</h1>
+    <a href="https://www.youtube.com/watch?v=Q0FTXnefVBA" target="_blank">
+        <img src="Shershaah.jpg" alt="Video Thumbnail" width="100%" height="500px">
+    </a>
+
+    <p><b>Shershaah is a 2021 Indian Hindi-language biographical war film based on the life of Vikram Batra, martyred in action in the Kargil War...</b></p>
+
+    <h1>STAR CAST</h1>
+    <div class="image-gallery">
+        <div class="image-item">
+            <img src="sid malhotra.jpg" alt="Vikram Batra">
+            <p class="image-caption">Sidharth Malhotra as Vikram Batra</p>
+        </div>
+        <div class="image-item">
+            <img src="kiara advani.jpg" alt="Dimple Cheema">
+            <p class="image-caption">Kiara Advani as Dimple Cheema</p>
+        </div>
+        <div class="image-item">
+            <img src="manmeet kaur.jpg" alt="Mona Singh">
+            <p class="image-caption">Manmeet Kaur as Mona Singh</p>
+        </div>
+        <div class="image-item">
+            <img src="shiv pandit.jpg" alt="Army Captain">
+            <p class="image-caption">Shiv Panditt as Army Captain</p>
+        </div>
+        <div class="image-item">
+            <img src="niktin dheer.jpeg" alt="Major Ajay">
+            <p class="image-caption">Niktin Dheer as Major Ajay</p>
+        </div>
+        <div class="image-item">
+            <img src="raj arjun.jpg" alt="Subedar Raghunath">
+            <p class="image-caption">Raj Arjun as Subedar Raghunath</p>
+        </div>
+        <div class="image-item">
+            <img src="munira kudrati.jpg" alt="Character">
+            <p class="image-caption">Munira Kudrati</p>
+        </div>
+    </div>
+</body>
+</html>

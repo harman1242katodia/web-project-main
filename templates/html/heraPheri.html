@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: auto;
+        }
+        .movie-header {
+            display: flex;
+            gap: 20px;
+        }
+        .movie-header img {
+            width: 180px;
+            height: 270px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .movie-details {
+            flex-grow: 1;
+        }
+        .watchlist-btn {
+            background-color: #ffc107;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .info-section {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .info-box {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            width: 48%;
+            text-align: center;
+        }
+        .info-box img {
+            width: 150px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        h1:hover {
+            color: #eb0c0c;
+    text-shadow: 0px 0px 10px rgba(232, 65, 65, 0.8); /* Subtle glow */
+    background: none; /* Ensures no highlight box */
+}
+
+        .gallery-container {
+            position: relative;
+            overflow: hidden;
+            padding: 20px;
+            max-width: 90vw;
+            margin: auto;
+        }
+
+        .image-gallery {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 10px;
+            white-space: nowrap;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .image-gallery::-webkit-scrollbar {
+            display: none;
+        }
+
+        .image-gallery img {
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2);
+        }
+
+        .scroll-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 18px;
+            transition: background 0.3s;
+        }
+
+        .scroll-btn:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .scroll-left {
+            left: 0;
+        }
+
+        .scroll-right {
+            right: 0;
+        }
+        .reviews {
+            margin-top: 30px;
+        }
+        .reviews h2 {
+            margin-bottom: 15px;
+        }
+        .review-box {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .review {
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .trailer-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .trailer-container iframe {
+            width: 100%;
+            max-width: 800px;
+            height: 450px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="movie-header">
+            <img src="Hera_Pheri.jpg" alt="Captain America: Brave New World Poster">
+            <div class="movie-details">
+                <h2>Hera Pheri</h2>
+                <p><strong>Year:</strong> 2000 | <strong>Rating:</strong> 8.2★| <strong>Duration:</strong> 2h 36min</p>
+                <p>Two tenants and a landlord look for answers to all their money problems- but when their opportunity arrives, will they know what to do with it?</p>
+                <p><strong>Genres:</strong> Comdey, Drama, Action, slapstick </p>
+                <p><strong>Director:</strong> Priyadarshan</p>
+                <p><strong>Writers:</strong> Siddique Lal, Neeraj Vora</p>
+                <button class="watchlist-btn">+ Add to Watchlist</button>
+            </div>
+        </div>
+        <div class="trailer-container">
+            <h1>Movie Trailer</h1>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/m1zMmVwWr-M" frameborder="0" allowfullscreen></iframe>
+            </div>
+            
+            <!-- <iframe src="https://www.youtube.com/embed/m1zMmVwWr-M" frameborder="0" allowfullscreen></iframe>
+            " frameborder="0" allowfullscreen></iframe> -->
+        </div>
+        <h1>STARCAST</h1>
+        <div class="info-section">
+            <div class="info-box">
+                <img src="akshay.jpg" alt="Capt. Vikram Batra">
+                <h3>Raju</h3>
+                <p>Akshay Kumar</p>
+            </div>
+            <div class="info-box">
+                <img src="suniel.avif" alt="Dimple Cheema">
+                <h3>Ghanshyam(Shyam)</h3>
+                <p>Suniel Shetty</p>
+            </div>
+        
+        
+            <div class="info-box">
+                <img src="paresh.jpg" alt="Capt. Vikram Batra">
+                <h3>Baburao Ganpatrao Apte</h3>
+                <p>Paresh Rawal</p>
+            </div>   
+    
+        <div class="info-box">
+            <img src="tabu.avif" alt="Capt. Vikram Batra">
+            <h3>Anuradha Shivshankar Panikar</h3>
+            <p>Tabu</p>
+        </div>   
+</div>
+    <h1>USER-REVIEWS</h1>
+        <div class="reviews">
+            <div class="review-box">
+                <div class="review">
+                    <p><strong>All time classic</strong><br>
+                        You can watch this movie with the iconic characters any time any where. It won't ever let you get bored.
+</p>
+                </div>
+                <div class="review">
+                    <p><strong>Best</strong><br>
+                        The movie that defined comedy in hindi cinema, a too good remake of an already good Ramji rao speaking! </p>
+                </div>
+                <div class="review">
+                    <p><strong>Baanngg!</strong><br>
+                        You won't believe it but it is true that I have seen this movie 17 times and I am still not tired of watching. I saw it on the theatres first and I loved it and then I bought it on DVD. This movie rocks. I love the performance of Paresh Rawal. Akshay kumar and sunil shetty also gives great performances. This movie really makes me laugh. My rating- 10/10</p>
+                </div>
+            </div>
+        </div>
+        <button class="scroll-btn scroll-right" onclick="scrollGallery('action-gallery', 300)">&#10095;</button>
+    </div>
+</body>
+</html>
+
