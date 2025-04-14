@@ -50,12 +50,13 @@
         <div class="logo">MovieFlix</div>
         <div class="search-box">
             <input type="text" placeholder="Search">
-            <button>🔎︎</button>
+            <button>🔎</button>
         </div>
         <ul class="nav-links">
             <li><a href="#101">Home</a></li>
             <li><a href="#102">Genres</a></li>
             <li><a href="{{ url_for('coming_soon') }}">Coming Soon</a></li>
+            <li><a href="topMovies.html">Top Movies</a></li>
             <li><a href="#103">About Us</a></li>
         </ul>
         <div class="welcome-message">
@@ -122,7 +123,9 @@
             <button class="scroll-btn scroll-left" onclick="scrollGallery('COMEDY', -300)">&#10094;</button>
             <div class="image-gallery" id="COMEDY">
                 <img src="{{ url_for('static', filename='images/Dhamaal.jpg') }}" alt="Dhamaal">
-                <img src="{{ url_for('static', filename='images/Hera_Pheri.jpg') }}" alt="Hera Pheri">
+                <a href="heraPheri.html">
+                    <img src="{{ url_for('static', filename='images/Hera_Pheri.jpg') }}" alt="Hera Pheri"></a>
+                <!-- <img src="{{ url_for('static', filename='images/Hera_Pheri.jpg') }}" alt="Hera Pheri"> -->
                 <img src="{{ url_for('static', filename='images/3_idiots.jpg') }}" alt="3 Idiots">
                 <img src="{{ url_for('static', filename='images/Spy.jpg') }}" alt="Spy">
                 <img src="{{ url_for('static', filename='images/Incoming.jpg') }}" alt="Incoming">
@@ -166,9 +169,15 @@
         <div class="gallery-container">
             <button class="scroll-btn scroll-left" onclick="scrollGallery('ROM-COM', -300)">&#10094;</button>
             <div class="image-gallery" id="ROM-COM">
-                <img src="{{ url_for('static', filename='images/Cocktail.jpg') }}" alt="Cocktail">
-                <img src="{{ url_for('static', filename='images/Band_Baaja_Baaraat.jpg') }}" alt="Band Baaja Baaraat">
-                <img src="{{ url_for('static', filename='images/dostana.jpg') }}" alt="Dostana">
+                <a href="cocktailReview.html">
+                    <img src="{{ url_for('static', filename='images/Cocktail.jpg') }}" alt="Cocktail"></a>
+                <!-- <img src="{{ url_for('static', filename='images/Cocktail.jpg') }}" alt="Cocktail"> -->
+                <a href="bandbajabaraat.html">
+                    <img src="{{ url_for('static', filename='images/Band_Baaja_Baaraat.jpg') }}" alt="Band Baaja Baaraat"></a>
+                <!-- <img src="{{ url_for('static', filename='images/Band_Baaja_Baaraat.jpg') }}" alt="Band Baaja Baaraat"> -->
+                <a href="dostanaReview.html">
+                    <img src="{{ url_for('static', filename='images/dostana.jpg') }}" alt="Dostana">
+                <!-- <img src="{{ url_for('static', filename='images/dostana.jpg') }}" alt="Dostana"> -->
                 <img src="{{ url_for('static', filename='images/Mere_Brother_Ki_Dulhan22.jpg') }}" alt="Mere Brother Ki Dulhan">
                 <img src="{{ url_for('static', filename='images/Jab_We_Met.jpg') }}" alt="Jab We Met">
                 <img src="{{ url_for('static', filename='images/Family_Affair.jpg') }}" alt="Family Affair">
